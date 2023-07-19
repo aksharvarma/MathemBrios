@@ -1,0 +1,23 @@
+** Set Operations
+Goes over union, intersection, exclusion and difference between two sets using a Venn diagram with different shades.
+
+[[file:media/images/set_operations/SetOperations_ManimCE_v0.17.3.png]]
+
+** Master Theorem
+Explains the key insight and intuition behind the Master Theorem used in analysis of algorithms for solving recurrences that are common for divide and conquer algorithms.
+
+[[file:media/images/master-theorem/MasterTheorem_ManimCE_v0.17.3.png]]
+
+** Pythagoras Theorem
+
+Various proofs of the Pythagoras theorem
+
+1. *SquareInTriangles*
+
+   One of my favorite proofs, and originally a proof without words. It uses four copies of a right angled triangle arranged so that: 1) it makes a big square with side length equal to the sum of the legs of the triangle; 2) the four hypotenuse create a smaller square in the middle of the big square. Calculating the area in two ways creates a $2ab$ term which cancels out to result in the Pythagoras theorem.
+   
+[[file:media/images/pythagoras-theorem-proofs/SquareInTriangles_ManimCE_v0.17.3.png]]
+
+2. *TrianglesInSquare* /(upcoming)/
+
+   A variant of the SquareInTriangles proof with the hypotenuse square on the outside, the four triangles on the inside. Once again calculating the area in two ways produces the result of the theorem.
