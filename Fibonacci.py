@@ -140,3 +140,41 @@ class EvenFibonacci(MovingCameraScene):
                   Uncreate(point1), Uncreate(point2), run_time=0.1)
         self.wait()
         return unsplit_point
+
+class SumOfEvenFibonacci(MovingCameraScene):
+    def construct(self):
+        tex_font_size = 60
+        title_text = Tex(r"\textsc{Sum of Even Fibonacci Numbers}",
+                       font_size=tex_font_size+10)
+        e_text = MathTex(r"E_n = 4\cdot E_{n-1} + E_{n-2}",
+                         color=RED,
+                         font_size=tex_font_size)
+        title_text.shift(4*UP)
+        e_text.shift(2*UP)
+
+        eq = MathTex(r"\sum_{i=1}^n E_n = S_n = {{S_{n-1}}} + {{E_{n}}} \quad")
+        eqs = [MathTex(r"\sum_{i=1}^n E_n = S_n = {{S_{n-1}}} + 4\cdot {{E_{n-1}}} + {{E_{n-2}}}"),
+               MathTex(r"\sum_{i=1}^n E_n = S_n = {{S_{n-1}}} + 4\cdot \left({{S_{n-1}}} - {{S_{n-2}}}\right) + {{E_{n-2}}}"),
+               MathTex(r"{{\sum_{i=1}^n E_n = S_n}} = {{S_{n-1}}} + 4\cdot \left({{S_{n-1}}} - {{S_{n-2}}}\right) + {{S_{n-2}}} - {{S_{n-3}}}"),
+               MathTex(r"{{\sum_{i=1}^n E_n = S_n}} = 5\cdot {{S_{n-1}}} - 4\cdot {{S_{n-2}}} + {{S_{n-2}}} - {{S_{n-3}}}"),
+               MathTex(r"\sum_{i=1}^n E_n = S_n = 5\cdot {{S_{n-1}}} - 3\cdot {{S_{n-2}}} - {{S_{n-3}}}")]
+
+        self.play(self.camera.auto_zoom([title_text, e_text, eq]+eqs,
+                                        margin=2, animate=True), run_time=0.1)
+        self.play(Write(title_text))
+        self.wait()
+        self.play(Write(e_text), run_time=2)
+        self.wait()
+
+        self.play(Write(eq), run_time=3)
+        self.wait(2)
+
+        self.play(TransformMatchingTex(eq, eqs[0]), run_time=3)
+        self.wait(2)
+
+        for i in range(1, len(eqs)):
+            self.play(TransformMatchingTex(eqs[i-1], eqs[i]), run_time=3)
+            self.wait(2)
+
+        self.play(eqs[-1].animate.set_color(GREEN))
+        self.wait(2)
