@@ -21,3 +21,13 @@ Various proofs of the Pythagoras theorem
 2. *TrianglesInSquare* /(upcoming)/
 
    A variant of the SquareInTriangles proof with the hypotenuse square on the outside, the four triangles on the inside. Once again calculating the area in two ways produces the result of the theorem.
+
+** Fibonacci
+
+Will have some Fibonacci related animations, but currently has one.
+
+1. EvenFibonacci
+
+   Finding the recurrence for the even Fibonacci numbers starting from that for the Fibonacci numbers.
+
+[[file:media/images/Fibonacci/EvenFibonacci_ManimCE_v0.17.3.png]]   
